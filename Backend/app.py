@@ -1,3 +1,9 @@
+# top of Backend/app.py (first lines)
+import os
+# run compatibility shim before any huggingface/sentence-transformers import
+from patch_hfhub import *
+from sentence_transformers import SentenceTransformer
+
 # Backend app.py — Render-ready, ONNX-based, full SQL support
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
