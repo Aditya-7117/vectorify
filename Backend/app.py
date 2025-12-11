@@ -470,6 +470,42 @@ def api_health():
         'providers': list(EMBEDDING_PROVIDERS.keys())
     })
 
+# Add this to Backend/app.py (below api_health)
+from flask import abort
+
+@app.route("/api/embed", methods=["POST"])
+def api_embed():
+    """POST JSON: { "texts": ["one","two"], "provider":"sentence-transformers-mini" }"""
+    data = request.get_json(force=True, silent=True)
+    if not data:
+        return jsonify({"error":"invalid json"}), 400
+
+    texts = data.get("texts") or data.get("input") or data.get("text")
+    if not texts:
+        return jsonify({"error":"no texts supplied"}), 400
+    if isinstance(texts, str):
+        texts = [texts]
+
+    provider = data.get("provider", "sentence-transformers-mini")
+    # fast/safe default for CPU
+    if provider not in EMBEDDING_PROVIDERS:
+        return jsonify({"error": f"unknown provider {provider}"}), 400
+
+    try:
+        p = EMBEDDING_PROVIDERS[provider]
+        if p['type'] == 'api':
+            if provider.startswith("openai"):
+                emb = generate_embeddings_openai(texts, p["name"])
+            elif provider.startswith("cohere"):
+                emb = generate_embeddings_cohere(texts, p["name"])
+            else:
+                return jsonify({"error":"unsupported api provider"}), 400
+        else:
+            emb = generate_embeddings_local(texts, provider)
+        return jsonify({"provider": provider, "embeddings": emb})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 if __name__ == "__main__":
     print("=" * 80)
