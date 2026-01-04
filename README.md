@@ -108,15 +108,16 @@ http://localhost:5173
 
 ---
 
-Screenshots (Proof of Concept)
-| Step                 | Screenshot                                |
-| -------------------- | ----------------------------------------- |
-| Frontend UI          | `screenshots/01_frontend_home.png`        |
-| File Upload          | `screenshots/02_file_upload.png`          |
-| Output Selection     | `screenshots/03_output_selection.png`     |
-| Embedding Generation | `screenshots/04_embeddings_generated.png` |
-| JSON Output          | `screenshots/05_downloaded_json.png`      |
-| Backend Running      | `screenshots/06_backend_running.png`      |
+## Screenshots (Proof of Concept)
+
+| Step | Description | Link |
+|-----|------------|------|
+| 01 | Frontend Home UI | [View Screenshot](screenshots/01_frontend_home.png) |
+| 02 | File Upload | [View Screenshot](screenshots/02_file_upload.png) |
+| 03 | Output Selection | [View Screenshot](screenshots/03_output_selection.png) |
+| 04 | Embedding Generation | [View Screenshot](screenshots/04_embeddings_generated.png) |
+| 05 | Downloaded JSON Output | [View Screenshot](screenshots/05_downloaded_json.png) |
+| 06 | Backend Running (Local) | [View Screenshot](screenshots/06_backend_running.png) |
 
 ---
 
