@@ -75,7 +75,7 @@ http://localhost:5173
 
 ---
 
-How It Works
+## How It Works
 -Upload a file (Excel / CSV / DOCX)
 -Choose output type: Vector Embeddings
 -Select embedding dimension (e.g. 1024)
@@ -84,7 +84,7 @@ How It Works
 
 ---
 
-Output Format (Example)
+## Output Format (Example)
 {
   "id": 1,
   "text": "Sample sentence",
@@ -95,7 +95,7 @@ Output Format (Example)
 
 ---
 
-This format is directly ingestible into:
+## This format is directly ingestible into:
 -FAISS
 -Pinecone
 -Milvus
@@ -116,7 +116,7 @@ Screenshots (Proof of Concept)
 
 ---
 
-Technologies Used
+## Technologies Used
 -Backend: Python, Flask, SQLAlchemy
 -ML: Sentence-Transformers (ONNX-ready inference)
 -Frontend: React, TypeScript, Vite
@@ -125,7 +125,7 @@ Technologies Used
 
 ---
 
-Use Cases
+## Use Cases
 -Semantic Search
 -Document Similarity
 -AI Chatbots (RAG)
@@ -134,7 +134,7 @@ Use Cases
 
 ---
 
-Future Enhancements
+## Future Enhancements
 -Vector database integration (FAISS / Pinecone)
 -Authentication
 -Batch processing
