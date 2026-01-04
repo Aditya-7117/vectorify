@@ -76,15 +76,18 @@ http://localhost:5173
 ---
 
 ## How It Works
--Upload a file (Excel / CSV / DOCX)
--Choose output type: Vector Embeddings
--Select embedding dimension (e.g. 1024)
--Generate embeddings
--Download output as JSON
+
+1. Upload a file (**Excel / CSV / DOCX**)
+2. Choose output type: **Vector Embeddings**
+3. Select embedding dimension (e.g. **1024**)
+4. Generate embeddings
+5. Download output as **JSON**
 
 ---
 
 ## Output Format (Example)
+
+```json
 {
   "id": 1,
   "text": "Sample sentence",
@@ -92,15 +95,16 @@ http://localhost:5173
   "dimension": 1024,
   "provider": "sentence-transformers-bge"
 }
+```
 
 ---
 
 ## This format is directly ingestible into:
--FAISS
--Pinecone
--Milvus
--Weaviate
--Custom RAG pipelines
+- FAISS
+- Pinecone
+- Milvus
+- Weaviate
+- Custom RAG pipelines
 
 ---
 
@@ -117,27 +121,47 @@ Screenshots (Proof of Concept)
 ---
 
 ## Technologies Used
--Backend: Python, Flask, SQLAlchemy
--ML: Sentence-Transformers (ONNX-ready inference)
--Frontend: React, TypeScript, Vite
--Data: Pandas, NumPy
--Deployment (optional): Render
+
+### Backend
+- Python
+- Flask
+- SQLAlchemy
+
+### Machine Learning
+- Sentence-Transformers
+- ONNX-ready inference
+
+### Frontend
+- React
+- TypeScript
+- Vite
+
+### Data Processing
+- Pandas
+- NumPy
+
+### Deployment (Optional)
+- Render
 
 ---
 
 ## Use Cases
--Semantic Search
--Document Similarity
--AI Chatbots (RAG)
--Knowledge Base Indexing
--Enterprise Data Vectorization
+
+- Semantic Search
+- Document Similarity
+- AI Chatbots (RAG)
+- Knowledge Base Indexing
+- Enterprise Data Vectorization
+
 
 ---
 
 ## Future Enhancements
--Vector database integration (FAISS / Pinecone)
--Authentication
--Batch processing
--Streaming JSONL output
+
+- Vector database integration (FAISS / Pinecone)
+- Authentication
+- Batch processing
+- Streaming JSONL output
+
     
 ---
